@@ -32,3 +32,43 @@ class Person(name: String, val age: Int = 0) {
 
 //class params are NOT FIELDS  , they are fields if you write val before one
 
+/*
+  Novel and a writer
+
+ */
+
+class Writer(firstName: String, surname: String, val year: Int) {
+  def fullName(): String = firstName + surname
+
+
+}
+
+class Novel(name: String, yearOfRelease: Int, author: Writer) {
+  def authorAge = yearOfRelease - author.year
+
+
+  def isWrittenBy(author: Writer): Boolean = {
+    return author.equals(this.author)
+  }
+
+  def copy(newyear: Int): Novel = {
+     new Novel(this.name, newyear, this.author)
+  }
+}
+
+class Counter(count: Int) {
+  def currentCount(): Int = count // or val in constructor
+
+  def increment(): Counter =  new Counter(this.count + 1)
+
+  def increment(value: Int): Counter =  new Counter(this.count + value)
+
+  def decrement(): Counter =  new Counter(this.count - 1)
+
+  def decrement(value: Int): Counter =  new Counter(this.count - value)
+
+  def incrementByOneManyXTimes(x: Int) :Counter = {
+    if (x == 0) this
+    else increment.incrementByOneManyXTimes(x-1)
+  }
+}
