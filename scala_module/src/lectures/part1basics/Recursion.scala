@@ -50,6 +50,12 @@ object Recursion extends App {
     3.  Fibonacci function, tail recursive.
    */
 
+
+
+  def concatenateString (times: Int , string: String, accumulator: String ): String ={
+    if(times < 1) accumulator else  concatenateString( times-1 , string , accumulator+string)
+  }
+
   @tailrec
   def concatenateTailrec(aString: String, n: Int, accumulator: String): String =
     if (n <= 0) accumulator
