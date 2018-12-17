@@ -1,6 +1,6 @@
 package lectures.part2.oop
 
-object InheritanceAndTraits extends App {
+object Inheritance extends App {
 
 
   class Animal {
