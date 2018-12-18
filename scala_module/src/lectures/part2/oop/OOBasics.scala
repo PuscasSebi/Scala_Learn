@@ -7,7 +7,7 @@ object OOBasics extends App {
   person.greet("Daniel")
   person.greet()
 
-}
+
 
 // constructor
 class Person(name: String, val age: Int = 0) {
@@ -71,4 +71,5 @@ class Counter(count: Int) {
     if (x == 0) this
     else increment.incrementByOneManyXTimes(x-1)
   }
+}
 }
