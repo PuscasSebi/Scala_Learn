@@ -8,7 +8,7 @@ import lectures.part3.fileSystem.files.Directory
 object FileSystem extends App {
 
   val root = Directory.ROOT
-  //at the end will show how to change var with val  , doing some functional programming
+  //at the end will show how to change var with val  , doing some functional programmingmkdi
   var state = State(root, root)
   val scanner = new Scanner(System.in)
 
