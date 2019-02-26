@@ -1,11 +1,20 @@
 package lectures.part3.fileSystem.files
 
-abstract class DirEntry(val parentPath:String, val name: String) {
-      def path: String = parentPath + Directory.SEPARATOR + name
+abstract class DirEntry(val parentPath: String, val name: String) {
+  def path: String = {
+    var separatorIfnecessary = if (Directory.SEPARATOR.equals(parentPath)) ""
+    else Directory.SEPARATOR
 
-      def asDirectory : Directory
+    parentPath + separatorIfnecessary + name
+  }
 
-      def asFile : File
+  def asDirectory: Directory
 
-      def getType : String
+  def asFile: File
+
+  def getType: String
+
+  def isDirectory: Boolean
+
+  def isFile: Boolean
 }
